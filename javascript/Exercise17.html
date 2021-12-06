@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 准备一个构造方法 
+        function Person(pname, page) {
+            this.pname = pname;
+            this.page = page;
+            this.eat = function (food) {
+                console.log(this.page + "岁的" + this.pname + "正在吃" + food);
+            }
+        }
+
+        var p1 = new Person("张思锐", 10);
+        // 查看对象属性
+        console.log(p1.pname);
+        console.log(p1.page);
+        // 调用对象方法
+        p1.eat("油条");
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
