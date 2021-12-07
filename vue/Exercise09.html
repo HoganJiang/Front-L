@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        {{a}}
+    </div>
+    <script src="/vue/js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                a: '我是渲染的指令-v-cloak'
+            }
+        })
+    </script>
+</body>
+
+</html>

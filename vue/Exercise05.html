@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 用在数组：item: 数组的值，index:数组的下标 -->
+            <!-- <li v-for="(item,index) in arr" :key="index">{{index}}-{{item}}</li> -->
+            <!-- 用与对象： tiem: 对象的值 index:对象的key-->
+            <li v-for="(item,index) in obj" :key="index">{{index}}-{{item}}</li>
+        </ul>
+    </div>
+    <script src="/vue/js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                // arr: [
+                //     '苹果',
+                //     '橘子',
+                //     '香蕉',
+                //     '草莓'
+                // ]
+                obj: {
+                    name: '小明',
+                    age: '17岁',
+                    height: '175cm',
+                    sex: '男',
+                    hobby: '打篮球'
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

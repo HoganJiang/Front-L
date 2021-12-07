@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" v-clock>
+        <h2>{{a}}</h2>
+        <!--监听事件的两种方式：@ && v-on-->
+        <button @click="add">按我加1</button>
+        <button @click="minus">按我减1</button>
+        <button v-on:click="mutli">按我乘2</button>
+    </div>
+    <script src="/vue/js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                a: 100
+            },
+            // 事件方法
+            methods: {
+                add() {
+                    //点击使a加1
+                    this.a++
+                    console.log(this.a)
+                },
+                minus() {
+                    //点击使a减1
+                    this.a--
+                    console.log(this.a)
+                },
+                mutli(){
+                    //点击使a乘以1
+                    this.a *= 2;
+                    console.log(this.a);    
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 180px;
+            height: 180px;
+            background: gold;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 50%;
+        }
+
+        .outer .center {
+            width: 130px;
+            height: 130px;
+            padding: 30px;
+            background: pink;
+            border-radius: 50%;
+        }
+
+        .outer .center .inner {
+            width: 130px;
+            height: 130px;
+            background: cyan;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="outer" @click="outer">
+            <div class="center" @click="center">
+                <!--.stop修饰符的作用就是阻止事件的一个冒泡 -->
+                <!-- 作用类似原生JavaScript的event.stopPropagation()方法 -->
+                <div class="inner" @click.stop="inner"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/vue/js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            methods: {
+                outer() {
+                    console.log("外层")
+                },
+                center() {
+                    console.log("中间")
+                },
+                inner(event) {
+                    console.log("内层")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
